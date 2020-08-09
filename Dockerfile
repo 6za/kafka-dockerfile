@@ -21,6 +21,8 @@ RUN wget http://mirrors.gigenet.com/apache/kafka/2.4.0/kafka_2.13-2.4.0.tgz \
   && rm -f /opt/kafka/config/server.properties
 
 ADD server.properties /opt/kafka/config/
+ADD update_properties.sh /root/
+RUN chmod +x /root/update_properties.sh
 
 WORKDIR /opt/kafka
 EXPOSE 9092
